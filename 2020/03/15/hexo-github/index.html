@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>hexo+github - Nicangtianws&#39;s Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Nicangtianws,"> 
+    <meta name="description" content="个人博客，涉及linux和java编程,首先来了解一下基本目录和相关文件
+名词说明
+
+post：文章
+page：页面
+
+
+目录说明
+
+资源目录（保存post，page的目录）
+source
+source/_posts：存放文章的目录
+
+
+,"> 
+    <meta name="author" content="Nicangtianws"> 
+    <link rel="alternative" href="atom.xml" title="Nicangtianws&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Nicangtianws&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://blog.nicangtianws.top"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">hexo+github</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">hexo+github</h1>
+        <div class="stuff">
+            <span>三月 15, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/github/" rel="tag">github</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="首先来了解一下基本目录和相关文件"><a href="#首先来了解一下基本目录和相关文件" class="headerlink" title="首先来了解一下基本目录和相关文件"></a>首先来了解一下基本目录和相关文件</h1><ul>
+<li><p>名词说明</p>
+<ul>
+<li>post：文章</li>
+<li>page：页面</li>
+</ul>
+</li>
+<li><p>目录说明</p>
+<ul>
+<li>资源目录（保存post，page的目录）<ul>
+<li>source</li>
+<li>source/_posts：存放文章的目录</li>
+</ul>
+</li>
+<li>主题目录<ul>
+<li>themes：主题存放目录</li>
+<li>themes/diaspora：具体主题资源文件存放目录（例如本博客主题：diasppora）</li>
+</ul>
+</li>
+<li>模板目录（保存创建post，page的模板文件，一般不需要更改）<ul>
+<li>scaffolds</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>配置文件：</p>
+<ul>
+<li>博客配置文件：主目录下的_config.xml</li>
+<li>主题配置文件：主题根目录下的_config.xml</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>基本命令说明：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init：初始化博客</span><br><span class="line">hexo new xxx 或者 hexo new post xxx：新建一篇博客</span><br><span class="line">hexo new page xxx：新建一个页面</span><br><span class="line">hexo g：生成博客</span><br><span class="line">hexo s：开启本地博客预览服务器</span><br><span class="line">hexo d：部署博客</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="开始搭建！"><a href="#开始搭建！" class="headerlink" title="开始搭建！"></a>开始搭建！</h1><h2 id="一、安装nodeJS"><a href="#一、安装nodeJS" class="headerlink" title="一、安装nodeJS"></a>一、安装nodeJS</h2><ul>
+<li>只需要点下一步下一步将软件安装完成就行了</li>
+<li>nodejs中文官网：<a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs工具官网</a></li>
+</ul>
+<h2 id="二、安装并配置git"><a href="#二、安装并配置git" class="headerlink" title="二、安装并配置git"></a>二、安装并配置git</h2><p>Git官网下载：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git工具下载</a></p>
+<ol>
+<li>设置账号：两种方式任选一种</li>
+</ol>
+<ul>
+<li><p>全局设置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your username"</span></span><br><span class="line">git config --global user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>仅当前git repo（git仓库）有效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name <span class="string">"your username"</span></span><br><span class="line">git config user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、github添加本机的ssh-key"><a href="#三、github添加本机的ssh-key" class="headerlink" title="三、github添加本机的ssh-key"></a>三、github添加本机的ssh-key</h2><ol>
+<li><p>生成本计算机的ssh-key</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成的ssh key在${user.home}/.ssh文件夹中。</p>
+<ol>
+<li><p>打开github网页端，进入settings中选择添加ssh key，标题随便填</p>
+<img src="/img/hexo-github/github-add-ssh-key.png" alt="添加ssh-key" width="750px">
+</li>
+<li><p>文本编辑器打开id_rsa.pub，将文件内容作为key的内容复制过去。</p>
+<img src="/img/hexo-github/github-add-ssh-key02.png" alt="添加ssh-key02" width="750px">
+<img src="/img/hexo-github/github-add-ssh-key01.png" alt="添加ssh-key01" width="750px">
+</li>
+</ol>
+</li>
+<li><p>查看是否添加成功：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo-github/github-add-ssh-key03.png" alt="查看是否添加成功"></p>
+</li>
+<li><p>在github网页端创建名为your username.github.io的仓库</p>
+<img src="/img/hexo-github/github-add-repo.png" alt="添加repo" width="750px">
+<img src="/img/hexo-github/github-add-repo01.png" alt="添加仓库01" width="750px">
+
+</li>
+</ol>
+<h2 id="四、安装hexo插件，开始配置博客"><a href="#四、安装hexo插件，开始配置博客" class="headerlink" title="四、安装hexo插件，开始配置博客"></a>四、安装hexo插件，开始配置博客</h2><ol>
+<li><p>打开git bash并执行命令安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化博客<br>选定hexo博客文件目录存放位置，鼠标右键打开git bash执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改博客配置文件</p>
+</li>
+</ol>
+<ul>
+<li>随便填<br><img src="/img/hexo-github/hexo-config.png" alt="配置01"></li>
+<li><strong>主要配置</strong><br><img src="/img/hexo-github/hexo-config01.png" alt="配置02"></li>
+</ul>
+<ol start="4">
+<li>下载diaspora主题并配置</li>
+</ol>
+<ul>
+<li>具体请参照作者的详细教程：<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">diaspora主题配置教程</a></li>
+</ul>
+<ol start="5">
+<li>生成博客并在本地测试<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>点此进行本地测试：<a href="http://localhost:4000" target="_blank" rel="noopener">本地测试</a></li>
+</ul>
+<ol start="6">
+<li>确认测试无误后发布博客<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><ol>
+<li><p>在source目录创建一个名为CNAME的文件（没有后缀名）</p>
+<img src="/img/hexo-github/custom-domain.png" alt="custom域名" width="750px">
+</li>
+<li><p>文件内容为你的网址，例如我的是：blog.nicangtianws.top</p>
+</li>
+<li><p>在你的域名解析中添加如下两条记录</p>
+<img src="/img/hexo-github/custom-domain01.png" alt="custom域名01" width="750px">
+第二个记录名称可以随便填写作为你的网站域名前缀
+
+</li>
+</ol>
+<h3 id="将图片放入图床"><a href="#将图片放入图床" class="headerlink" title="将图片放入图床"></a>将图片放入图床</h3><ul>
+<li>这个需要申请备案比较麻烦，像我这种写着玩的就没去搞。</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=410446170.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=4937357.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=36102291.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='b0f5aeab712986d4e991'
+        data-cs='3c41bfebae27be561c8613e14732c79c40eecebb'
+        data-r='nicangtianws.github.io'
+        data-o='nicangtianws'
+        data-a='nicangtianws'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

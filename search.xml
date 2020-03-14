@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>hexo+github</title>
+    <url>/2020/03/15/hexo-github/</url>
+    <content><![CDATA[<h1 id="首先来了解一下基本目录和相关文件"><a href="#首先来了解一下基本目录和相关文件" class="headerlink" title="首先来了解一下基本目录和相关文件"></a>首先来了解一下基本目录和相关文件</h1><ul>
+<li><p>名词说明</p>
+<ul>
+<li>post：文章</li>
+<li>page：页面</li>
+</ul>
+</li>
+<li><p>目录说明</p>
+<ul>
+<li>资源目录（保存post，page的目录）<ul>
+<li>source</li>
+<li>source/_posts：存放文章的目录</li>
+</ul>
+</li>
+<li>主题目录<ul>
+<li>themes：主题存放目录</li>
+<li>themes/diaspora：具体主题资源文件存放目录（例如本博客主题：diasppora）</li>
+</ul>
+</li>
+<li>模板目录（保存创建post，page的模板文件，一般不需要更改）<ul>
+<li>scaffolds</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>配置文件：</p>
+<ul>
+<li>博客配置文件：主目录下的_config.xml</li>
+<li>主题配置文件：主题根目录下的_config.xml</li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>基本命令说明：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init：初始化博客</span><br><span class="line">hexo new xxx 或者 hexo new post xxx：新建一篇博客</span><br><span class="line">hexo new page xxx：新建一个页面</span><br><span class="line">hexo g：生成博客</span><br><span class="line">hexo s：开启本地博客预览服务器</span><br><span class="line">hexo d：部署博客</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="开始搭建！"><a href="#开始搭建！" class="headerlink" title="开始搭建！"></a>开始搭建！</h1><h2 id="一、安装nodeJS"><a href="#一、安装nodeJS" class="headerlink" title="一、安装nodeJS"></a>一、安装nodeJS</h2><ul>
+<li>只需要点下一步下一步将软件安装完成就行了</li>
+<li>nodejs中文官网：<a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs工具官网</a></li>
+</ul>
+<h2 id="二、安装并配置git"><a href="#二、安装并配置git" class="headerlink" title="二、安装并配置git"></a>二、安装并配置git</h2><p>Git官网下载：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git工具下载</a></p>
+<ol>
+<li>设置账号：两种方式任选一种</li>
+</ol>
+<ul>
+<li><p>全局设置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your username"</span></span><br><span class="line">git config --global user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>仅当前git repo（git仓库）有效</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config user.name <span class="string">"your username"</span></span><br><span class="line">git config user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="三、github添加本机的ssh-key"><a href="#三、github添加本机的ssh-key" class="headerlink" title="三、github添加本机的ssh-key"></a>三、github添加本机的ssh-key</h2><ol>
+<li><p>生成本计算机的ssh-key</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成的ssh key在${user.home}/.ssh文件夹中。</p>
+<ol>
+<li><p>打开github网页端，进入settings中选择添加ssh key，标题随便填</p>
+<img src="/img/hexo-github/github-add-ssh-key.png" alt="添加ssh-key" width="750px">
+</li>
+<li><p>文本编辑器打开id_rsa.pub，将文件内容作为key的内容复制过去。</p>
+<img src="/img/hexo-github/github-add-ssh-key02.png" alt="添加ssh-key02" width="750px">
+<img src="/img/hexo-github/github-add-ssh-key01.png" alt="添加ssh-key01" width="750px">
+</li>
+</ol>
+</li>
+<li><p>查看是否添加成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p><img src="/img/hexo-github/github-add-ssh-key03.png" alt="查看是否添加成功"></p>
+</li>
+<li><p>在github网页端创建名为your username.github.io的仓库</p>
+<img src="/img/hexo-github/github-add-repo.png" alt="添加repo" width="750px">
+<img src="/img/hexo-github/github-add-repo01.png" alt="添加仓库01" width="750px">
+
+</li>
+</ol>
+<h2 id="四、安装hexo插件，开始配置博客"><a href="#四、安装hexo插件，开始配置博客" class="headerlink" title="四、安装hexo插件，开始配置博客"></a>四、安装hexo插件，开始配置博客</h2><ol>
+<li><p>打开git bash并执行命令安装hexo</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g hexo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初始化博客<br>选定hexo博客文件目录存放位置，鼠标右键打开git bash执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改博客配置文件</p>
+</li>
+</ol>
+<ul>
+<li>随便填<br><img src="/img/hexo-github/hexo-config.png" alt="配置01"></li>
+<li><strong>主要配置</strong><br><img src="/img/hexo-github/hexo-config01.png" alt="配置02"></li>
+</ul>
+<ol start="4">
+<li>下载diaspora主题并配置</li>
+</ol>
+<ul>
+<li>具体请参照作者的详细教程：<a href="https://github.com/Fechin/hexo-theme-diaspora" target="_blank" rel="noopener">diaspora主题配置教程</a></li>
+</ul>
+<ol start="5">
+<li>生成博客并在本地测试<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li>点此进行本地测试：<a href="http://localhost:4000" target="_blank" rel="noopener">本地测试</a></li>
+</ul>
+<ol start="6">
+<li>确认测试无误后发布博客<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><ol>
+<li><p>在source目录创建一个名为CNAME的文件（没有后缀名）</p>
+<img src="/img/hexo-github/custom-domain.png" alt="custom域名" width="750px">
+</li>
+<li><p>文件内容为你的网址，例如我的是：blog.nicangtianws.top</p>
+</li>
+<li><p>在你的域名解析中添加如下两条记录</p>
+<img src="/img/hexo-github/custom-domain01.png" alt="custom域名01" width="750px">
+第二个记录名称可以随便填写作为你的网站域名前缀
+
+</li>
+</ol>
+<h3 id="将图片放入图床"><a href="#将图片放入图床" class="headerlink" title="将图片放入图床"></a>将图片放入图床</h3><ul>
+<li>这个需要申请备案比较麻烦，像我这种写着玩的就没去搞。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/03/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+</search>
