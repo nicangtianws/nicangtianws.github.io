@@ -182,7 +182,7 @@ source/_posts：存放文章的目录
 
 </li>
 </ol>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><ol>
+<h2 id="加快访问速度"><a href="#加快访问速度" class="headerlink" title="加快访问速度"></a>加快访问速度</h2><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><ol>
 <li><p>在source目录创建一个名为CNAME的文件（没有后缀名）<br><img src="https://i.loli.net/2020/04/06/RWM1U24ybSeNaIr.png" alt="custom-domain.png"></p>
 </li>
 <li><p>文件内容为你的网址，例如我的是：blog.nicangtianws.top</p>
@@ -190,8 +190,28 @@ source/_posts：存放文章的目录
 <li><p>在你的域名解析中添加如下两条记录<br><img src="https://i.loli.net/2020/04/06/d5wic23CehQBbav.png" alt="custom-domain01.png"><br>第二个记录名称可以随便填写作为你的网站域名前缀</p>
 </li>
 </ol>
+<h3 id="coding托管代码"><a href="#coding托管代码" class="headerlink" title="coding托管代码"></a>coding托管代码</h3><ol>
+<li><p>打开网站注册账号<br>网站地址: <a href="https://coding.net/" target="_blank" rel="noopener">coding</a></p>
+</li>
+<li><p>实名认证</p>
+<ol>
+<li>点击右上角团队管理<br><img src="https://i.loli.net/2020/04/06/ScBw9btglPAfT2v.png" alt="coding-config.png"></li>
+<li>点击团队概览，未实名的用户会提示进行实名认证，跟着步骤实名就行了<br><img src="https://i.loli.net/2020/04/06/tPdRk3Xqo8c675e.png" alt="coding-config01.png"></li>
+</ol>
+</li>
+<li><p>添加ssh key<br>点击个人设置<br><img src="https://i.loli.net/2020/04/06/RawGzeotcDNQUbJ.png" alt="coding-config06.png"><br>然后就跟github一样添加ssh key，只需要复制之前生成好的ssh key就行了，不需要再重新生成<br><img src="https://i.loli.net/2020/04/06/fo9ydnmUgRiJSCF.png" alt="coding-config07.png"></p>
+</li>
+<li><p>新建项目，点击左上角回到主页，点击全部项目<br><img src="https://i.loli.net/2020/04/06/XUHIqfBkaTL8MDN.png" alt="coding-config04.png"><br>然后新建代码托管项目，项目名称和访问标识随意<br><img src="https://i.loli.net/2020/04/06/SVHXYn2qviaxrNF.png" alt="coding-config05.png"></p>
+</li>
+<li><p>添加自定义域名<br><img src="https://i.loli.net/2020/04/06/nkmP6wjcIixESyR.png" alt="coding-config02.png"><br>添加后会出现在如蓝圈所示<br><img src="https://i.loli.net/2020/04/06/v7cCokpPYH2s6Dh.png" alt="coding-config03.png"></p>
+</li>
+<li><p>最后修改_config.xml(博客根目录的配置文件，非主题配置文件)<br><img src="https://i.loli.net/2020/04/06/pimF2ZL1be9tUcx.png" alt="coding-config08.png"></p>
+</li>
+</ol>
+<p><strong>然后执行生成，发布命令，就会同时发布到github跟coding</strong></p>
 <h3 id="将图片放入图床"><a href="#将图片放入图床" class="headerlink" title="将图片放入图床"></a>将图片放入图床</h3><ul>
-<li>这个需要申请备案比较麻烦，像我这种写着玩的就没去搞。</li>
+<li>图床地址：<a href="https://sm.ms/" target="_blank" rel="noopener">sm.ms</a></li>
+<li>很简单，注册账号上传图片然后会生成各种链接，根据自己的需要复制到文章处替换即可</li>
 </ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
