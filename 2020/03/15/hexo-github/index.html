@@ -10,21 +10,16 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Nicangtianws,"> 
-    <meta name="description" content="个人博客，涉及linux和java编程,首先来了解一下基本目录和相关文件
+    <meta name="description" content="个人博客，涉及linux和java编程,准备写博客所用的是markdown语法markdown菜鸟教程
+首先来了解一下基本目录和相关文件
 名词说明
-
 post：文章
 page：页面
 
 
 目录说明
-
 资源目录（保存post，page的目录）
-source
-source/_posts：存放文章的目录
-
-
-,"> 
+s,"> 
     <meta name="author" content="Nicangtianws"> 
     <link rel="alternative" href="atom.xml" title="Nicangtianws&#39;s Blog" type="application/atom+xml"> 
     <link rel="icon" href="https://i.loli.net/2020/04/06/eFpG4fsMOuLlmEy.png"> 
@@ -78,15 +73,14 @@ source/_posts：存放文章的目录
 
         </div>
         <div class="content markdown">
-            <h1 id="首先来了解一下基本目录和相关文件"><a href="#首先来了解一下基本目录和相关文件" class="headerlink" title="首先来了解一下基本目录和相关文件"></a>首先来了解一下基本目录和相关文件</h1><ul>
-<li><p>名词说明</p>
-<ul>
+            <h1 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h1><h2 id="写博客所用的是markdown语法"><a href="#写博客所用的是markdown语法" class="headerlink" title="写博客所用的是markdown语法"></a>写博客所用的是markdown语法</h2><p><a href="https://www.runoob.com/markdown/md-tutorial.html" target="_blank" rel="noopener">markdown菜鸟教程</a></p>
+<h2 id="首先来了解一下基本目录和相关文件"><a href="#首先来了解一下基本目录和相关文件" class="headerlink" title="首先来了解一下基本目录和相关文件"></a>首先来了解一下基本目录和相关文件</h2><ol>
+<li>名词说明<ul>
 <li>post：文章</li>
 <li>page：页面</li>
 </ul>
 </li>
-<li><p>目录说明</p>
-<ul>
+<li>目录说明<ul>
 <li>资源目录（保存post，page的目录）<ul>
 <li>source</li>
 <li>source/_posts：存放文章的目录</li>
@@ -103,14 +97,11 @@ source/_posts：存放文章的目录
 </li>
 </ul>
 </li>
-<li><p>配置文件：</p>
-<ul>
+<li>配置文件：<ul>
 <li>博客配置文件：主目录下的_config.xml</li>
 <li>主题配置文件：主题根目录下的_config.xml</li>
 </ul>
 </li>
-</ul>
-<ol start="4">
 <li>基本命令说明：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo init：初始化博客</span><br><span class="line">hexo new xxx 或者 hexo new post xxx：新建一篇博客</span><br><span class="line">hexo new page xxx：新建一个页面</span><br><span class="line">hexo g：生成博客</span><br><span class="line">hexo s：开启本地博客预览服务器</span><br><span class="line">hexo d：部署博客</span><br></pre></td></tr></table></figure>
 
 </li>
@@ -119,23 +110,19 @@ source/_posts：存放文章的目录
 <li>只需要点下一步下一步将软件安装完成就行了</li>
 <li>nodejs中文官网：<a href="http://nodejs.cn/" target="_blank" rel="noopener">nodejs工具官网</a></li>
 </ul>
-<h2 id="二、安装并配置git"><a href="#二、安装并配置git" class="headerlink" title="二、安装并配置git"></a>二、安装并配置git</h2><p>Git官网下载：<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git工具下载</a></p>
-<ol>
+<h2 id="二、安装并配置git"><a href="#二、安装并配置git" class="headerlink" title="二、安装并配置git"></a>二、安装并配置git</h2><ol>
+<li>下载并安装git，默认下一步就行<br><a href="https://git-scm.com/downloads" target="_blank" rel="noopener">git工具下载</a></li>
 <li>设置账号：两种方式任选一种</li>
 </ol>
 <ul>
-<li><p>全局设置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your username"</span></span><br><span class="line">git config --global user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>仅当前git repo（git仓库）有效</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name <span class="string">"your username"</span></span><br><span class="line">git config user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
+<li>全局设置<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">"your username"</span></span><br><span class="line">git config --global user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure></li>
+<li>仅当前git repo（git仓库）有效<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name <span class="string">"your username"</span></span><br><span class="line">git config user.email <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <h2 id="三、github添加本机的ssh-key"><a href="#三、github添加本机的ssh-key" class="headerlink" title="三、github添加本机的ssh-key"></a>三、github添加本机的ssh-key</h2><ol>
 <li><p>生成本计算机的ssh-key</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"your email"</span></span><br></pre></td></tr></table></figure></li>
 <li><p>生成的ssh key在${user.home}/.ssh文件夹中。</p>
 <ol>
 <li><p>打开github网页端，进入settings中选择添加ssh key，标题随便填<br><img src="https://i.loli.net/2020/04/06/fowzVTvkNMQbnci.png" alt="github-add-ssh-key.png"></p>
@@ -152,14 +139,9 @@ source/_posts：存放文章的目录
 </li>
 </ol>
 <h2 id="四、安装hexo插件，开始配置博客"><a href="#四、安装hexo插件，开始配置博客" class="headerlink" title="四、安装hexo插件，开始配置博客"></a>四、安装hexo插件，开始配置博客</h2><ol>
-<li><p>安装hexo和发布插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>初始化博客<br>选定hexo博客文件目录存放位置，鼠标右键打开git bash执行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>修改博客配置文件</p>
-</li>
+<li>安装hexo和发布插件<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></li>
+<li>初始化博客<br>选定hexo博客文件目录存放位置，鼠标右键打开git bash执行：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li>
+<li>修改博客配置文件</li>
 </ol>
 <ul>
 <li>随便填<br><img src="https://i.loli.net/2020/04/06/VA7jL8Gl9tT6aHi.png" alt="hexo-config.png"></li>
@@ -182,37 +164,6 @@ source/_posts：存放文章的目录
 
 </li>
 </ol>
-<h2 id="加快访问速度"><a href="#加快访问速度" class="headerlink" title="加快访问速度"></a>加快访问速度</h2><h3 id="自定义域名"><a href="#自定义域名" class="headerlink" title="自定义域名"></a>自定义域名</h3><ol>
-<li><p>在source目录创建一个名为CNAME的文件（没有后缀名）<br><img src="https://i.loli.net/2020/04/06/RWM1U24ybSeNaIr.png" alt="custom-domain.png"></p>
-</li>
-<li><p>文件内容为你的网址，例如我的是：blog.nicangtianws.top</p>
-</li>
-<li><p>在你的域名解析中添加如下两条记录<br><img src="https://i.loli.net/2020/04/06/d5wic23CehQBbav.png" alt="custom-domain01.png"><br>第二个记录名称可以随便填写作为你的网站域名前缀</p>
-</li>
-</ol>
-<h3 id="coding托管代码"><a href="#coding托管代码" class="headerlink" title="coding托管代码"></a>coding托管代码</h3><ol>
-<li><p>打开网站注册账号<br>网站地址: <a href="https://coding.net/" target="_blank" rel="noopener">coding</a></p>
-</li>
-<li><p>实名认证</p>
-<ol>
-<li>点击右上角团队管理<br><img src="https://i.loli.net/2020/04/06/ScBw9btglPAfT2v.png" alt="coding-config.png"></li>
-<li>点击团队概览，未实名的用户会提示进行实名认证，跟着步骤实名就行了<br><img src="https://i.loli.net/2020/04/06/tPdRk3Xqo8c675e.png" alt="coding-config01.png"></li>
-</ol>
-</li>
-<li><p>添加ssh key<br>点击个人设置<br><img src="https://i.loli.net/2020/04/06/RawGzeotcDNQUbJ.png" alt="coding-config06.png"><br>然后就跟github一样添加ssh key，只需要复制之前生成好的ssh key就行了，不需要再重新生成<br><img src="https://i.loli.net/2020/04/06/fo9ydnmUgRiJSCF.png" alt="coding-config07.png"></p>
-</li>
-<li><p>新建项目，点击左上角回到主页，点击全部项目<br><img src="https://i.loli.net/2020/04/06/XUHIqfBkaTL8MDN.png" alt="coding-config04.png"><br>然后新建代码托管项目，项目名称和访问标识随意<br><img src="https://i.loli.net/2020/04/06/SVHXYn2qviaxrNF.png" alt="coding-config05.png"></p>
-</li>
-<li><p>添加自定义域名<br><img src="https://i.loli.net/2020/04/06/nkmP6wjcIixESyR.png" alt="coding-config02.png"><br>添加后会出现在如蓝圈所示<br><img src="https://i.loli.net/2020/04/06/v7cCokpPYH2s6Dh.png" alt="coding-config03.png"></p>
-</li>
-<li><p>最后修改_config.xml(博客根目录的配置文件，非主题配置文件)<br><img src="https://i.loli.net/2020/04/06/pimF2ZL1be9tUcx.png" alt="coding-config08.png"></p>
-</li>
-</ol>
-<p><strong>然后执行生成，发布命令，就会同时发布到github跟coding</strong></p>
-<h3 id="将图片放入图床"><a href="#将图片放入图床" class="headerlink" title="将图片放入图床"></a>将图片放入图床</h3><ul>
-<li>图床地址：<a href="https://sm.ms/" target="_blank" rel="noopener">sm.ms</a></li>
-<li>很简单，注册账号上传图片然后会生成各种链接，根据自己的需要复制到文章处替换即可</li>
-</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
