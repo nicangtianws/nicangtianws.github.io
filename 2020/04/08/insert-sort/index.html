@@ -5,12 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Hello World - Nicangtianws&#39;s Blog</title>
+    <title>insert-sort - Nicangtianws&#39;s Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Nicangtianws,"> 
-    <meta name="description" content="个人博客，涉及linux和java编程,Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any pr,"> 
+    <meta name="description" content="个人博客，涉及linux和java编程,插入排序将数组中的数字挨个插入已经排好序的数组中，将第一个数作为排好序数组的第一个元素，然后依次将未排序数组中的数字依次拿出来放入排好序的数组中（每一次放入可以看作前i个元素进行排序，所以可以用一个,"> 
     <meta name="author" content="Nicangtianws"> 
     <link rel="alternative" href="atom.xml" title="Nicangtianws&#39;s Blog" type="application/atom+xml"> 
     <link rel="icon" href="https://i.loli.net/2020/04/06/eFpG4fsMOuLlmEy.png"> 
@@ -40,7 +40,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://blog.nicangtianws.top"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">Hello World</h3>
+    <h3 class="subtitle">insert-sort</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -55,27 +55,17 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">Hello World</h1>
+        <h1 class="title">insert-sort</h1>
         <div class="stuff">
-            <span>三月 14, 2020</span>
+            <span>四月 08, 2020</span>
             
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/algorithm/" rel="tag">algorithm</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/insert-sort/" rel="tag">insert sort</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/java/" rel="tag">java</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/sort-algorithm/" rel="tag">sort algorithm</a></li></ul>
+
 
         </div>
         <div class="content markdown">
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+            <h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p>将数组中的数字挨个插入已经排好序的数组中，将第一个数作为排好序数组的第一个元素，然后依次将未排序数组中的数字依次拿出来放入排好序的数组中（每一次放入可以看作前i个元素进行排序，所以可以用一个数组进行操作）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InsertSort</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] insertSort(<span class="keyword">int</span>[] arr)&#123;</span><br><span class="line">        <span class="keyword">int</span>[] a = arr;</span><br><span class="line">        <span class="comment">//定义临时变量用于交换</span></span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//开始循环</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; a.length - <span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="comment">//每添加一个数字进行一次排序</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>;j &gt; <span class="number">0</span>;j--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[j] &lt; a[j-<span class="number">1</span>])&#123;</span><br><span class="line">                    temp = a[j];</span><br><span class="line">                    a[j] = a[j-<span class="number">1</span>];</span><br><span class="line">                    a[j-<span class="number">1</span>] = temp;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testInsertSort</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">11</span>,<span class="number">65</span>,<span class="number">1</span>,<span class="number">9</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">30</span>,<span class="number">3</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span>[] rs = insertSort(a);</span><br><span class="line">        <span class="keyword">assert</span> rs.length &gt; <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; rs.length;i++)&#123;</span><br><span class="line">            System.out.println(rs[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="">
