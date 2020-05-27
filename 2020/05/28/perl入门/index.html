@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>perl入门 - Nicangtianws&#39;s Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Nicangtianws,"> 
+    <meta name="description" content="个人博客，涉及linux和java编程,perl文件头#!usr/bin/perl
+变量
+如果使用该模块，定义变量需要在前面加my。
+
+use strict;
+
+定义变量用$：my $str = &amp;quot;abc&amp;quot;;my i ,"> 
+    <meta name="author" content="Nicangtianws"> 
+    <link rel="alternative" href="atom.xml" title="Nicangtianws&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="https://i.loli.net/2020/04/06/eFpG4fsMOuLlmEy.png"> 
+    
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Nicangtianws&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://blog.nicangtianws.top"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">perl入门</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">perl入门</h1>
+        <div class="stuff">
+            <span>五月 28, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/excel/" rel="tag">excel</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/ftp/" rel="tag">ftp</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/perl/" rel="tag">perl</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/zip/" rel="tag">zip</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="perl"><a href="#perl" class="headerlink" title="perl"></a>perl</h1><h3 id="文件头"><a href="#文件头" class="headerlink" title="文件头"></a>文件头</h3><p><code>#!usr/bin/perl</code></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li>如果使用该模块，定义变量需要在前面加my。</li>
+</ol>
+<p><code>use strict;</code></p>
+<ol start="2">
+<li>定义变量用$：<code>my $str = &quot;abc&quot;;my i = 0;</code></li>
+</ol>
+<p><strong>字符串使用””会识别其中的特殊字符，特殊字符则需要转义。使用’’则不会。</strong></p>
+<ol start="3">
+<li><p>定义数组用@：<code>my @arr = (1,2,3);</code></p>
+</li>
+<li><p>定义哈希用%：<code>my %hash = (&#39;a&#39;=&gt;1,&#39;b&#39;=&gt;2);</code></p>
+</li>
+</ol>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li>引用变量地址：在变量前面使用\，根据情况在引用前面加上$/@/%符号取消引用</li>
+</ul>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#变量</span></span><br><span class="line"><span class="keyword">my</span> $str;</span><br><span class="line"><span class="comment">#引用</span></span><br><span class="line"><span class="keyword">my</span> $str_r = \$str;</span><br><span class="line"><span class="comment">#取消引用</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"$$str_r"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#数组</span></span><br><span class="line"><span class="keyword">my</span> @arr;</span><br><span class="line"><span class="comment">#引用</span></span><br><span class="line"><span class="keyword">my</span> $arr_r = \@arr;</span><br><span class="line"><span class="comment">#取消引用</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"@$arr_r"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#哈希</span></span><br><span class="line"><span class="keyword">my</span> %hash = (<span class="string">'a'</span>=&gt;<span class="number">1</span>,<span class="string">'b'</span>=&gt;<span class="number">2</span>);</span><br><span class="line"><span class="comment">#引用</span></span><br><span class="line"><span class="keyword">my</span> $hash_r = \@hash;</span><br><span class="line"><span class="comment">#取消引用</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"%$hash_r"</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="读取excel表"><a href="#读取excel表" class="headerlink" title="读取excel表"></a>读取excel表</h3><ol>
+<li><p>使用模块：<code>use Spreadsheet::ParseXLSX;</code></p>
+</li>
+<li><p>读入文件</p>
+</li>
+</ol>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#新建解析器并读取文件到workbook</span></span><br><span class="line"><span class="keyword">my</span> $parser = Spreadsheet::ParseXLSX-&gt;new();</span><br><span class="line"><span class="comment">#此处读取中文名称的文件失败，改成英文正常</span></span><br><span class="line"><span class="keyword">my</span> $workbook = $parser-&gt;parse(<span class="string">"test3.xlsx"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>注意不能使用中文路径</strong></p>
+<ol start="3">
+<li>读取：<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> @dataArr;</span><br><span class="line"><span class="comment">#判断是否读取到excel表</span></span><br><span class="line"><span class="keyword">if</span> ( !<span class="keyword">defined</span> $workbook ) &#123;</span><br><span class="line">	<span class="keyword">die</span> $parser-&gt;error(), <span class="string">".\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#扫描workbook，将数据放入到数组中</span></span><br><span class="line"><span class="keyword">for</span> <span class="keyword">my</span> $worksheet ( $workbook-&gt;worksheets() ) &#123;</span><br><span class="line">	<span class="keyword">my</span> ( $row_min, $row_max ) = $worksheet-&gt;row_range();</span><br><span class="line">	<span class="keyword">my</span> ( $col_min, $col_max ) = $worksheet-&gt;col_range();</span><br><span class="line">	<span class="keyword">for</span> <span class="keyword">my</span> $row ( $row_min .. $row_max ) &#123;</span><br><span class="line">		<span class="keyword">my</span> @temp;</span><br><span class="line">		<span class="keyword">for</span> <span class="keyword">my</span> $col ( $col_min .. $col_max ) &#123;</span><br><span class="line">		   <span class="keyword">my</span> $cell = $worksheet-&gt;get_cell( $row, $col );</span><br><span class="line">		   <span class="keyword">next</span> <span class="keyword">unless</span> $cell;</span><br><span class="line">		   <span class="keyword">push</span>(@temp,$cell-&gt;value());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#因为是二维数组，所以这里放入的是引用</span></span><br><span class="line">		<span class="keyword">my</span> $temp_ref = \@temp;</span><br><span class="line">		<span class="keyword">push</span>(@dataArr,$temp_ref);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><ol>
+<li><p>模块：<code>use Archive::Zip qw( :ERROR_CODES :CONSTANTS );</code></p>
+</li>
+<li><p>示例代码</p>
+</li>
+</ol>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">my</span> $dir = <span class="string">'D:\work\kettle\excel'</span>;</span><br><span class="line"><span class="keyword">my</span> $zip = Archive::Zip-&gt;new();</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加文件夹or添加文件$zip-&gt;addFile($filePath);</span></span><br><span class="line">$zip-&gt;addTree($dir);</span><br><span class="line"></span><br><span class="line"><span class="comment">#压缩文件夹</span></span><br><span class="line"><span class="keyword">unless</span> ( $zip-&gt;writeToFileNamed(<span class="string">'excel.zip'</span>) == AZ_OK ) &#123;</span><br><span class="line">	<span class="keyword">die</span> <span class="string">'write error'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="上传ftp"><a href="#上传ftp" class="headerlink" title="上传ftp"></a>上传ftp</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#指定远程的文件和本地的文件</span></span><br><span class="line"><span class="keyword">my</span> $remotefile = @_[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">my</span> $localfile = @_[<span class="number">1</span>];</span><br><span class="line"><span class="comment">#创建FTP连接</span></span><br><span class="line"><span class="keyword">my</span> $ftp = Net::FTP-&gt;new(<span class="string">"192.168.160.128"</span>, <span class="string">Timeout =&gt;</span> <span class="number">30</span>) <span class="keyword">or</span> <span class="keyword">die</span> <span class="string">"Could not connect.\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#登录到FTP服务器</span></span><br><span class="line"><span class="keyword">my</span> $username = <span class="string">'ws'</span>;</span><br><span class="line"><span class="keyword">my</span> $password = <span class="string">'12315swdqq'</span>;</span><br><span class="line">$ftp-&gt;login($username,$password) <span class="keyword">or</span> <span class="keyword">die</span> <span class="string">"Could not login.\n"</span>;</span><br><span class="line"><span class="comment">#切换目录</span></span><br><span class="line">$ftp-&gt;cwd(<span class="string">'/home/ws'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传文件</span></span><br><span class="line">$ftp-&gt;put($localfile,$remotefile) <span class="keyword">or</span> <span class="keyword">die</span> <span class="string">"Could not put remotefile:$remotefile\n"</span>;</span><br><span class="line">$ftp-&gt;quit;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置字符编码为utf8"><a href="#设置字符编码为utf8" class="headerlink" title="设置字符编码为utf8"></a>设置字符编码为utf8</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> utf8;</span><br><span class="line"><span class="keyword">binmode</span>(STDIN, <span class="string">':encoding(utf8)'</span>);</span><br><span class="line"><span class="keyword">binmode</span>(STDOUT, <span class="string">':encoding(utf8)'</span>);</span><br><span class="line"><span class="keyword">binmode</span>(STDERR, <span class="string">':encoding(utf8)'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>参考网址：<br><a href="https://www.runoob.com/perl/perl-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a><br><a href="https://iowiki.com/perl/perl_discussion.html" target="_blank" rel="noopener">WIKI教程</a><br><a href="https://metacpan.org/" target="_blank" rel="noopener">模块下载</a></p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://music.163.com/song/media/outer/url?id=410446170.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://music.163.com/song/media/outer/url?id=4937357.mp3'></li>
+                        
+                    
+                        
+                            <li title='2' data-url='http://music.163.com/song/media/outer/url?id=36102291.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+		data-enable='true'
+        data-ae='true'
+        data-ci='b0f5aeab712986d4e991'
+        data-cs='3c41bfebae27be561c8613e14732c79c40eecebb'
+        data-r='nicangtianws.github.io'
+        data-o='nicangtianws'
+        data-a='nicangtianws'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

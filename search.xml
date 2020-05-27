@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>perl入门</title>
+    <url>/2020/05/28/perl%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1 id="perl"><a href="#perl" class="headerlink" title="perl"></a>perl</h1><h3 id="文件头"><a href="#文件头" class="headerlink" title="文件头"></a>文件头</h3><p><code>#!usr/bin/perl</code></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ol>
+<li>如果使用该模块，定义变量需要在前面加my。</li>
+</ol>
+<p><code>use strict;</code></p>
+<ol start="2">
+<li>定义变量用$：<code>my $str = &quot;abc&quot;;my i = 0;</code></li>
+</ol>
+<p><strong>字符串使用””会识别其中的特殊字符，特殊字符则需要转义。使用’’则不会。</strong></p>
+<ol start="3">
+<li><p>定义数组用@：<code>my @arr = (1,2,3);</code></p>
+</li>
+<li><p>定义哈希用%：<code>my %hash = (&#39;a&#39;=&gt;1,&#39;b&#39;=&gt;2);</code></p>
+</li>
+</ol>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><ul>
+<li>引用变量地址：在变量前面使用\，根据情况在引用前面加上$/@/%符号取消引用</li>
+</ul>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="comment">#变量</span></span><br><span class="line"><span class="keyword">my</span> $str;</span><br><span class="line"><span class="comment">#引用</span></span><br><span class="line"><span class="keyword">my</span> $str_r = \$str;</span><br><span class="line"><span class="comment">#取消引用</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"$$str_r"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#数组</span></span><br><span class="line"><span class="keyword">my</span> @arr;</span><br><span class="line"><span class="comment">#引用</span></span><br><span class="line"><span class="keyword">my</span> $arr_r = \@arr;</span><br><span class="line"><span class="comment">#取消引用</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"@$arr_r"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#哈希</span></span><br><span class="line"><span class="keyword">my</span> %hash = (<span class="string">'a'</span>=&gt;<span class="number">1</span>,<span class="string">'b'</span>=&gt;<span class="number">2</span>);</span><br><span class="line"><span class="comment">#引用</span></span><br><span class="line"><span class="keyword">my</span> $hash_r = \@hash;</span><br><span class="line"><span class="comment">#取消引用</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">"%$hash_r"</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="读取excel表"><a href="#读取excel表" class="headerlink" title="读取excel表"></a>读取excel表</h3><ol>
+<li><p>使用模块：<code>use Spreadsheet::ParseXLSX;</code></p>
+</li>
+<li><p>读入文件</p>
+</li>
+</ol>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="comment">#新建解析器并读取文件到workbook</span></span><br><span class="line"><span class="keyword">my</span> $parser = Spreadsheet::ParseXLSX-&gt;new();</span><br><span class="line"><span class="comment">#此处读取中文名称的文件失败，改成英文正常</span></span><br><span class="line"><span class="keyword">my</span> $workbook = $parser-&gt;parse(<span class="string">"test3.xlsx"</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>注意不能使用中文路径</strong></p>
+<ol start="3">
+<li>读取：<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">my</span> @dataArr;</span><br><span class="line"><span class="comment">#判断是否读取到excel表</span></span><br><span class="line"><span class="keyword">if</span> ( !<span class="keyword">defined</span> $workbook ) &#123;</span><br><span class="line">	<span class="keyword">die</span> $parser-&gt;error(), <span class="string">".\n"</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">#扫描workbook，将数据放入到数组中</span></span><br><span class="line"><span class="keyword">for</span> <span class="keyword">my</span> $worksheet ( $workbook-&gt;worksheets() ) &#123;</span><br><span class="line">	<span class="keyword">my</span> ( $row_min, $row_max ) = $worksheet-&gt;row_range();</span><br><span class="line">	<span class="keyword">my</span> ( $col_min, $col_max ) = $worksheet-&gt;col_range();</span><br><span class="line">	<span class="keyword">for</span> <span class="keyword">my</span> $row ( $row_min .. $row_max ) &#123;</span><br><span class="line">		<span class="keyword">my</span> @temp;</span><br><span class="line">		<span class="keyword">for</span> <span class="keyword">my</span> $col ( $col_min .. $col_max ) &#123;</span><br><span class="line">		   <span class="keyword">my</span> $cell = $worksheet-&gt;get_cell( $row, $col );</span><br><span class="line">		   <span class="keyword">next</span> <span class="keyword">unless</span> $cell;</span><br><span class="line">		   <span class="keyword">push</span>(@temp,$cell-&gt;value());</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">#因为是二维数组，所以这里放入的是引用</span></span><br><span class="line">		<span class="keyword">my</span> $temp_ref = \@temp;</span><br><span class="line">		<span class="keyword">push</span>(@dataArr,$temp_ref);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h3><ol>
+<li><p>模块：<code>use Archive::Zip qw( :ERROR_CODES :CONSTANTS );</code></p>
+</li>
+<li><p>示例代码</p>
+</li>
+</ol>
+<figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">my</span> $dir = <span class="string">'D:\work\kettle\excel'</span>;</span><br><span class="line"><span class="keyword">my</span> $zip = Archive::Zip-&gt;new();</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加文件夹or添加文件$zip-&gt;addFile($filePath);</span></span><br><span class="line">$zip-&gt;addTree($dir);</span><br><span class="line"></span><br><span class="line"><span class="comment">#压缩文件夹</span></span><br><span class="line"><span class="keyword">unless</span> ( $zip-&gt;writeToFileNamed(<span class="string">'excel.zip'</span>) == AZ_OK ) &#123;</span><br><span class="line">	<span class="keyword">die</span> <span class="string">'write error'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="上传ftp"><a href="#上传ftp" class="headerlink" title="上传ftp"></a>上传ftp</h3><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="comment">#指定远程的文件和本地的文件</span></span><br><span class="line"><span class="keyword">my</span> $remotefile = @_[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">my</span> $localfile = @_[<span class="number">1</span>];</span><br><span class="line"><span class="comment">#创建FTP连接</span></span><br><span class="line"><span class="keyword">my</span> $ftp = Net::FTP-&gt;new(<span class="string">"192.168.160.128"</span>, <span class="string">Timeout =&gt;</span> <span class="number">30</span>) <span class="keyword">or</span> <span class="keyword">die</span> <span class="string">"Could not connect.\n"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#登录到FTP服务器</span></span><br><span class="line"><span class="keyword">my</span> $username = <span class="string">'ws'</span>;</span><br><span class="line"><span class="keyword">my</span> $password = <span class="string">'12315swdqq'</span>;</span><br><span class="line">$ftp-&gt;login($username,$password) <span class="keyword">or</span> <span class="keyword">die</span> <span class="string">"Could not login.\n"</span>;</span><br><span class="line"><span class="comment">#切换目录</span></span><br><span class="line">$ftp-&gt;cwd(<span class="string">'/home/ws'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">#上传文件</span></span><br><span class="line">$ftp-&gt;put($localfile,$remotefile) <span class="keyword">or</span> <span class="keyword">die</span> <span class="string">"Could not put remotefile:$remotefile\n"</span>;</span><br><span class="line">$ftp-&gt;quit;</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置字符编码为utf8"><a href="#设置字符编码为utf8" class="headerlink" title="设置字符编码为utf8"></a>设置字符编码为utf8</h3><figure class="highlight perl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> utf8;</span><br><span class="line"><span class="keyword">binmode</span>(STDIN, <span class="string">':encoding(utf8)'</span>);</span><br><span class="line"><span class="keyword">binmode</span>(STDOUT, <span class="string">':encoding(utf8)'</span>);</span><br><span class="line"><span class="keyword">binmode</span>(STDERR, <span class="string">':encoding(utf8)'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>参考网址：<br><a href="https://www.runoob.com/perl/perl-tutorial.html" target="_blank" rel="noopener">菜鸟教程</a><br><a href="https://iowiki.com/perl/perl_discussion.html" target="_blank" rel="noopener">WIKI教程</a><br><a href="https://metacpan.org/" target="_blank" rel="noopener">模块下载</a></p>
+]]></content>
+      <categories>
+        <category>perl</category>
+      </categories>
+      <tags>
+        <tag>excel</tag>
+        <tag>perl</tag>
+        <tag>ftp</tag>
+        <tag>zip</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>java-excel</title>
     <url>/2020/05/07/java-excel/</url>
     <content><![CDATA[<h1 id="创建excel表"><a href="#创建excel表" class="headerlink" title="创建excel表"></a>创建excel表</h1><ul>
