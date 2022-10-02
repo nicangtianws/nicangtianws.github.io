@@ -2,8 +2,9 @@ sudo: false
 language: node_js
 node_js:
   - 16 # use nodejs v10 LTS
-before_install:
-  - npm i hexo-theme-kira
+install:
+  - npm install hexo-cli -g
+  - npm install
 cache: npm
 branches:
   only:
