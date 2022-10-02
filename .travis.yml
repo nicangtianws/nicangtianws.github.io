@@ -2,6 +2,8 @@ sudo: false
 language: node_js
 node_js:
   - 16 # use nodejs v10 LTS
+before_install:
+  - npm i hexo-theme-kira
 cache: npm
 branches:
   only:
